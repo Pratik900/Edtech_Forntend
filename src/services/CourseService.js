@@ -44,3 +44,21 @@ export async function updateCourse(updateData){
         console.log(error)
     }   
 }
+
+export async function sentlogin(data){
+    try {
+        const response=await axios.post("http://localhost:9090/login",data);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getByName(name){
+    try{
+        const response = await axios.get(`http://localhost:9090/login/${name}`)
+        return response.data;
+    }catch(error){
+        console.log(error)
+    }   
+}

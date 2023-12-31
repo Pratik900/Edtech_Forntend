@@ -2,11 +2,11 @@ import { Alert, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { FetchCourseId, updateCourse } from "../services/CourseService";
 
 export function CourseUpdate() {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const params = useParams();
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ export function CourseUpdate() {
       setTimeout(() => {
         const result = updateCourse(formData, params.id);
         console.log(result);
-        // navigate("/machine-list");
+        navigate("/allcourses");
       }, 1500);
     } catch (error) {
       console.log(error);
@@ -127,7 +127,7 @@ export function CourseUpdate() {
                     </div>
 
           <Form.Group className="mt-3">
-            {isSubmitted && <Alert variant="success">Details Inserted</Alert>}
+            {isSubmitted && <Alert variant="success">Details Updated</Alert>}
           </Form.Group>
         </Form>
       </div>

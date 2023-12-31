@@ -38,9 +38,9 @@ function NavbarComponent() {
 
 
                         <Form className="d-flex">
-                            <Button as={NavLink} to="/dashboard" variant="outline-dark me-2 btn-dark" className='text-white' type="submit">
+                            {/* <Button as={NavLink} to="/dashboard" variant="outline-dark me-2 btn-dark" className='text-white' type="submit">
                                 Dashboard
-                            </Button>
+                            </Button> */}
                             <Button as={NavLink} to="/login" variant="outline-dark btn-dark" className='text-white'>
                                 Login
                             </Button>
